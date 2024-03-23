@@ -1,0 +1,134 @@
+import React from "react";
+import "/src/App.css";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardImage,
+  MDBBtn,
+} from "mdb-react-ui-kit";
+const Courseitems = ({searchTerm}) => {
+
+  const courses =[
+   {id:1},{id:2},{id:3},{id:4},{id:5},{id:6} 
+  ]
+const filteredCourses=courses.filter((i)=>
+courses.name.toLowerCase().includes(searchTerm.toLowerCase()))
+
+  const navigate = useNavigate();
+  return (
+    <>
+      <div class="row m-3 row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <Link to='/bootstrap'>
+          <div class="card h-100">
+            <img
+              src="https://www.etatvasoft.com/insights/wp-content/uploads/2017/02/b-thumb-img9.jpg"
+              class="card-img-top w-100"
+              alt="Bootstrap"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Bootstrap</h5>
+              <p class="card-text">
+                Bootstrap is a free and open-source CSS framework directed at
+                responsive, mobile-first front-end web development
+              </p>
+            </div>
+          </div>
+          </Link>
+        </div>
+        <div class="col">
+          <Link to='/react'>
+          <div class="card h-100">
+            <img onClick={navigate('/react')} 
+              class="w-100"
+              src="https://shethink.in/wp-content/uploads/2021/07/react.js-img.png"
+              alt="react js"
+            />
+            <div class="card-body">
+              <h5 class="card-title">React js</h5>
+              <p class="card-text">
+                This is a crash course on React fundamentals
+              </p>
+            </div>
+          </div>
+          </Link>
+        </div>
+        <div class="col">
+          <Link to='/html'>
+          <div class="card h-100">
+            <img
+              src="https://ik.imagekit.io/tpkbnlhpp/asset%202.png?updatedAt=1711195091595"
+              class="card-img-top"
+              alt="html"
+            />
+            <div class="card-body">
+              <h5 class="card-title">HTML</h5>
+              <p class="card-text">
+                This is where you begin your journey in html
+              </p>
+            </div>
+          </div>
+          </Link>
+        </div>
+        <div class="col">
+          <Link to='/angular'>
+          <div class="card h-100">
+            <img
+              src="https://www.freecodecamp.org/news/content/images/2020/04/Copy-of-Copy-of-Travel-Photography.png"
+              class="card-img-top w-100"
+              alt="Angular js"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Angular js</h5>
+              <p class="card-text">Angular js lecture courses available</p>
+            </div>
+          </div>
+          </Link>
+        </div>
+        <div class="col">
+          <Link to="/node">
+          <div class="card h-100">
+            <img
+              src="https://ik.imagekit.io/tpkbnlhpp/asset%203.jpeg?updatedAt=1711195091601"
+              class="card-img-top"
+              alt="Node js"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Node js</h5>
+              <p class="card-text">
+                Node.js is a cross-platform, open-source JavaScript runtime
+                environment that can run on Windows, Linux, Unix, macOS, and
+                more
+              </p>
+            </div>
+          </div>
+          </Link>
+        </div>
+        <div class="col">
+          <Link to="/tailwind">
+          <div class="card h-100">
+            <img
+              src="https://ik.imagekit.io/tpkbnlhpp/asset%204.png?updatedAt=1711195093750"
+              class="card-img-top"
+              alt="Tailwind css"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Tailwind css</h5>
+              <p class="card-text">
+                Tailwind CSS is a utility-first CSS framework for rapidly
+                building modern websites without ever leaving your HTML.
+              </p>
+            </div>
+          </div>
+          </Link>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Courseitems;
